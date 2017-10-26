@@ -1,0 +1,38 @@
+<section id="banner">
+
+<div class="container">
+    <div class="row">
+         <div class="block">
+            <div class="col-md-6 col-md-offset-3 col-sm-6">
+
+               <h1 class="add-buttons">Edit Movie</span></h1>               
+
+                 <form class="form-group" method="post" action="/api/movies/{{movie.id}}?_method=PUT">
+
+                    <input type="text" class="form-control" placeholder="Title" name="title" required="true" required value="{{movie.title}}">
+                    <select type="text" class="form-control" style="margin-top:5%;" name="genre">
+                        <option value={{movie.genre._id}} selected>{{movie.genre.name}}</option>
+                      {{#each listofgenre}}
+                          <option value={{_id}}>{{name}}</option>
+                      {{/each}}
+                    </select>
+                    <input type="text" class="form-control" style="margin-top:5%;" name="year" placeholder="Year" required value="{{movie.year}}">
+                    <select type="text" class="form-control" style="margin-top:5%;" name="priority" placeholder="Priority" required value="{{movie.priority}}">
+                        <option value="Low">Low</option>
+                        <option value="High">High</option>
+                    </select>
+                    <ul class="download-btn add-buttons" style="margin-top:5%;">
+                      <li>
+                        <a href="/" class="btn btn-default btn-windows"> <i class="fa fa-arrow-left"></i>Back</a>
+                      </li>
+                      <li>
+                        <button type="submit" class="btn btn-default btn-andriod"><i class="fa fa-floppy-o"></i> Submit</button>
+                      </li>
+                    </ul>
+
+                </form>
+        </div>
+        </div>
+    </div>
+</div>
+<section/>
