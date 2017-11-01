@@ -106,6 +106,7 @@ header .social-info li a:hover {
 }
 #banner .block {
   padding-top: 10px;
+  width: 100%;
 }
 #banner .block h1 {
   margin-bottom: 18px;

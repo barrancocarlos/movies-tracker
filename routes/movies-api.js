@@ -78,13 +78,16 @@ app.get('/api/movies', function(req, res, next) {
     });
 
 //Update movie
-    app.put('/api/movies/:id', function(req, res, next) {
+    app.put('/api/movies/:id', upload.single('photo'), function(req, res, next) {
         console.log("edit id");
         Movie.findById(req.params.id, function(err, data) {
             data.title = req.body.title;
             data.year = req.body.year;
             data.genre = req.body.genre;
             data.priority = req.body.priority;
+            if (req.file) {
+              data.photo = req.file.filename;
+            }
             data.save(function(err, data) {
                 if(err) {
                     return next(err);
