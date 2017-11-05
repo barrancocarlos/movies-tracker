@@ -14,7 +14,35 @@ app.get('/', function(req, res) {
      res.render('index');
  });
 
- // Latest movies  res.render('latest-movies', { movie : data});
+//horror movies
+app.get('/horror', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('horror', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+
+
+//res.render('edit', { movie:data, listofgenre:datagenre, helpers:{test:"Hello"}});
+  // helpers:{if_eq:
+  //   function(a, b, block) {
+  //     return a == b ? block(this):block.inverse(this);
+  //   }
+
+ // Latest movies
 app.get('/latest', function(req, res, next) {
   var movies = Movie.find().exec(function(err, data) {
        if(err) {
@@ -52,10 +80,10 @@ app.get('/add', function(req, res) {
                return next(err);
            }
            console.log(datagenre);
-           res.render('edit', { movie:data, listofgenre:datagenre});
+
+           res.render('edit', { movie:data, listofgenre:datagenre, helpers:{test:"Hello"}});
        });
     });
  });
-
 
 };//end function

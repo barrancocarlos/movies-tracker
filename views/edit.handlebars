@@ -7,6 +7,8 @@
 
                <h1 class="add-buttons">Edit Movie</span></h1>
 
+               <p>{{test}}</p>
+
                  <form class="form-group" method="post" enctype="multipart/form-data" action="/api/movies/{{movie.id}}?_method=PUT">
 
                     <input type="text" class="form-control" placeholder="Title" name="title" required="true" required value="{{movie.title}}">
