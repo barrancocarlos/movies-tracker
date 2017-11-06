@@ -81,7 +81,14 @@ app.get('/add', function(req, res) {
            }
            console.log(datagenre);
 
-           res.render('edit', { movie:data, listofgenre:datagenre, helpers:{test:"Hello"}});
+           res.render('edit', { movie:data, listofgenre:datagenre, helpers:{
+             if_eq:function(a, b, opts) {
+               if (a == b) {
+                   return opts.fn(this);
+               } else {
+                   return opts.inverse(this);
+               }
+           }}});
        });
     });
  });

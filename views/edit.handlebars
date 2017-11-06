@@ -7,16 +7,23 @@
 
                <h1 class="add-buttons">Edit Movie</span></h1>
 
-               <p>{{test}}</p>
-
                  <form class="form-group" method="post" enctype="multipart/form-data" action="/api/movies/{{movie.id}}?_method=PUT">
 
                     <input type="text" class="form-control" placeholder="Title" name="title" required="true" required value="{{movie.title}}">
                     <select type="text" class="form-control" style="margin-top:5%;" name="genre">
-                        <option value={{movie.genre._id}} selected>{{movie.genre.name}}</option>
-                      {{#each listofgenre}}
-                          <option value={{_id}}>{{name}}</option>
-                      {{/each}}
+
+                      <option value={{movie.genre._id}} selected>{{movie.genre.name}}</option>
+                     {{#each listofgenre}}
+                         <option value={{_id}}>{{name}}</option>
+                     {{/each}}                    
+                      <!--{{#each listofgenre}}
+                        {{#if_eq movie.genre.name name}}
+                          <option value={{movie.genre.name}} selected>{{name}}</option>
+                         {{else}}
+                         <option value={{_id}}>{{name}}</option>
+                         {{/if_eq}}
+                         <p>{{movie.genre._id}}</p>
+                      {{/each}}-->
                     </select>
                     <input type="text" class="form-control" style="margin-top:5%;" name="year" placeholder="Year" required value="{{movie.year}}">
                     <select type="text" class="form-control" style="margin-top:5%;" name="priority" placeholder="Priority" required value="{{movie.priority}}">
