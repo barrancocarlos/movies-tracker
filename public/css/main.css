@@ -97,6 +97,7 @@ header .social-info li a:hover {
   background-size: cover;
   position: relative;
   padding: 100px 0;
+  min-height: 675px;
 }
 #banner .app-img {
   padding-top: 10px;
@@ -371,10 +372,43 @@ footer p {
 
 .cat-module {
   border-radius: 15px;
-  -webkit-box-shadow: 6px 7px 23px -2px rgba(122,111,122,1);
-  -moz-box-shadow: 6px 7px 23px -2px rgba(122,111,122,1);
-  box-shadow: 6px 7px 23px -2px rgba(122,111,122,1);
+  -webkit-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
+  -moz-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
+  box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
   margin-bottom: 30px;
+  text-decoration: none;
+  background-color: white;
+}
+
+.cat-module:hover {
+  -webkit-box-shadow: 9px 10px 29px -8px rgba(112,106,112,1);
+  -moz-box-shadow: 9px 10px 29px -8px rgba(112,106,112,1);
+  box-shadow: 9px 10px 29px -8px rgba(112,106,112,1);
+}
+
+.cat-module a {
+  text-decoration: none;
+}
+
+.cat-module h3 {
+  color:#262b31;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.cat-module h4 {
+  color: #999;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.cat-module h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  margin-top: 21px;
+  margin-bottom: 12px;
 }
 
 .cat-module .left1 {
@@ -398,6 +432,39 @@ footer p {
 .cat-module .left i {
   color: white;
   font-size: 55px;
-  margin-top: 44px;
+  margin-top: 41px;
 
+}
+
+.green {
+  color:#6fbf39;
+}
+
+.purple {
+  color:#8883bc;
+}
+
+.blue {
+  color:#00afec;
+}
+
+.diagonal{
+  background-image: url("../images/movies-back.jpg");
+}
+
+#banner .block h1 {
+    margin-bottom: 18px;
+    line-height: 55px;
+    color: #ffffff;
+    font-weight: 300;
+    margin-top: 160px;
+    text-align: center;
+    font-size: 60px;
+}
+
+#banner .block p {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 300;
+    text-align: center;
 }
