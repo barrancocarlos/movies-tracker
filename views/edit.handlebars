@@ -12,10 +12,17 @@
                     <input type="text" class="form-control" placeholder="Title" name="title" required="true" required value="{{movie.title}}">
                     <select type="text" class="form-control" style="margin-top:5%;" name="genre">
 
-                      <option value={{movie.genre._id}} selected>{{movie.genre.name}}</option>
+                      {{#each listofgenre}}
+                      {{#if_eq ../movie.genre.name name}}
+                        <option value={{_id}} selected>{{name}}</option>
+                       {{else}}
+                        <option value={{_id}}>{{name}}</option>
+                       {{/if_eq}}
+                       {{/each}}
+                      <!--<option value={{movie.genre._id}} selected>{{movie.genre.name}}</option>
                      {{#each listofgenre}}
                          <option value={{_id}}>{{name}}</option>
-                     {{/each}}                    
+                     {{/each}} -->
                       <!--{{#each listofgenre}}
                         {{#if_eq movie.genre.name name}}
                           <option value={{movie.genre.name}} selected>{{name}}</option>

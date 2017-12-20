@@ -1,0 +1,39 @@
+
+<section id="banner">
+
+    <div class="container">
+        <div class="block">
+          <ul class="download-btn">
+            <li><a href="/add" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Add New</a></li>
+          </ul>
+            <div class="row">
+            {{#if movie}}
+            {{#each movie}}
+                {{#if_eq genre.name "Drama"}}
+                <div class="col-md-4">
+                  <div class="card">
+                    <img class="card-img-top custom-img" src="/uploads/{{photo}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{title}}</h4>
+                        <p class="card-text">Genre: {{genre.name}}</p>
+                        <p class="card-text">Year: {{year}}</p>
+                        <p class="card-text">Priority: {{priority}}</p>
+
+                        <a href="/{{this.id }}" class="btn btn-info">EDIT</a>
+                        <form action="/api/movies/{{this.id }}?_method=DELETE" method="POST" >
+                              <button type="submit" class="btn btn-danger">DELETE</button>
+                        </form>
+                      </div>
+                </div>
+                </div>
+              {{/if_eq}}
+            {{/each}}
+            {{else}}
+            <h3>You have no movies</h3>
+            {{/if}}
+
+
+
+        </div>
+    </div>
+</section>

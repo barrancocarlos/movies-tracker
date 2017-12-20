@@ -34,13 +34,127 @@ app.get('/horror', function(req, res, next) {
    });
 });
 
+//comedy movies
+app.get('/comedy', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('comedy', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//comedy movies
+app.get('/comedy', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('comedy', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//sci-fi movies
+app.get('/sci-fi', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('sci-fi', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//crime movies
+app.get('/crime', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('crime', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//drama movies
+app.get('/drama', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('drama', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//thriller movies
+app.get('/thriller', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('thriller', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
 
 
-//res.render('edit', { movie:data, listofgenre:datagenre, helpers:{test:"Hello"}});
-  // helpers:{if_eq:
-  //   function(a, b, block) {
-  //     return a == b ? block(this):block.inverse(this);
-  //   }
 
  // Latest movies
 app.get('/latest', function(req, res, next) {
@@ -72,6 +186,7 @@ app.get('/add', function(req, res) {
         if(err) {
             return next(err);
         }
+        //get genres
         Genre.populate(data, { path: "genre" },function(err, data) {
         console.log(data);
        });
@@ -80,7 +195,7 @@ app.get('/add', function(req, res) {
                return next(err);
            }
            console.log(datagenre);
-
+           //handlebars helper for conditional logic
            res.render('edit', { movie:data, listofgenre:datagenre, helpers:{
              if_eq:function(a, b, opts) {
                if (a == b) {
