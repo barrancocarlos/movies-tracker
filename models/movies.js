@@ -15,6 +15,7 @@ var MovieSchema = mongoose.Schema({
               enum: ["Low", "High"]
     },
     photo: {type: String},
+    createdAt: {type: Date, default: Date.now},
 
 });
 

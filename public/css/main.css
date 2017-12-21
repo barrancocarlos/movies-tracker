@@ -468,3 +468,68 @@ footer p {
     font-weight: 300;
     text-align: center;
 }
+
+.custom-img {
+  height: 155px;
+  object-fit: cover;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.movie-module {
+  border-radius: 15px;
+  margin-bottom: 45px;
+  -webkit-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
+  -moz-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
+  box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    font-weight: 300;
+    font-size: 27px;
+}
+
+.card-text {
+  font-size: 22px;
+  color: #696666;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.edit-icon {
+  font-size: 55px;
+  margin-left: 68px;
+  color:#00afec;
+}
+
+.edit-icon:hover {
+  color:#059ace;
+}
+
+.delete-icon {
+  font-size: 55px;
+  margin-left: 57px;
+  background: none;
+  border: none;
+  color:#8883bc;
+
+}
+
+.delete-icon:hover {
+  color:#615e82;
+}
+
+.latest-background {
+  background-image: url("../images/latest.jpg");
+}
+
+.latest-background h1 {
+    margin-bottom: 18px;
+    line-height: 55px;
+    color: #ffffff;
+    font-weight: 300;
+    text-align: center;
+    font-size: 60px;
+    height: 210px;
+    padding-top: 63px;
+}

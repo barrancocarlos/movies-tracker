@@ -158,7 +158,7 @@ app.get('/thriller', function(req, res, next) {
 
  // Latest movies
 app.get('/latest', function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
+  var movies = Movie.find().sort("-createdAt").exec(function(err, data) {
        if(err) {
            return next(err);
        }
