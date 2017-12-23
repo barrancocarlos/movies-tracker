@@ -4,27 +4,29 @@ $(function () {
 })
 </script>
 
-<div class="latest-background">
 
-      <h1 class="wow fadeInUp">Latest Movies</h1>
-
-</div>
+<div class="movies-background"></div>
 
 <section id="latest">
 
   <div class="container">
     <div class="block">
-      <ul class="download-btn">
-        <li><a href="/add" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Add New</a></li>
+
+      <a href="/"><h3><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Go Back</h3></a>
+      <h1>Latest Movies</h1>
+      <h4>Add a New Movie to your list or use the Priority list button to see your High list</h4>
+      <ul class="download-btn text-center">
+        <li><a href="/add" class="btn btn-default btn-windows"><i class="fa fa-plus-circle"></i>Add New</a></li>
+        <li><a href="/priority" class="btn btn-default btn-apple"><i class="fa fa-bolt"></i>High Priority</a></li>
       </ul>
-      <div class="row wow fadeInUp">
+      <div class="row wow fadeInUp movies-main">
         {{#if movie}}
           {{#each movie}}
             <div class="col-md-4">
               <div class="card movie-module">
                 <img class="card-img-top custom-img" src="/uploads/{{photo}}" alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">{{title}}</h4>
+                  <h2 class="card-title">{{title}}</h2>
                   <div class="row">
                     <div class="col-md-6">
                       <p class="card-text">Genre: {{genre.name}}</p>
@@ -37,28 +39,28 @@ $(function () {
                         <i class="fa fa-eye-slash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Mark as Seen"></i>
                       </button>
                     </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <p>Marking a movie as "seen" will delete it from your list</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <form action="/api/movies/{{this.id }}?_method=DELETE" method="POST">
-                              <button type="submit" class="btn btn-primary">Delete</button>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Marking a movie as "seen" will delete it from your list</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form action="/api/movies/{{this.id }}?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
                   </div>
                 </div>
               </div>

@@ -154,6 +154,26 @@ app.get('/thriller', function(req, res, next) {
    });
 });
 
+//high priority
+app.get('/priority', function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('priority', { movie : data, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
 
 
  // Latest movies

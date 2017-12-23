@@ -519,17 +519,89 @@ footer p {
   color:#615e82;
 }
 
-.latest-background {
+.movies-background {
   background-image: url("../images/latest.jpg");
+  height:50px;
 }
 
-.latest-background h1 {
-    margin-bottom: 18px;
-    line-height: 55px;
-    color: #ffffff;
-    font-weight: 300;
-    text-align: center;
-    font-size: 60px;
-    height: 210px;
-    padding-top: 63px;
+.modal-backdrop {
+    position: relative;
+}
+
+#latest h1 {
+  color:#6199b0;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 65px;
+}
+
+#latest h3 {
+  font-size: 22px;
+  color: #00afec;
+  margin-top: 25px;
+}
+
+#latest h4 {
+  color: #716d6d;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 25px;
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+#latest .block .download-btn li {
+  display: inline-block;
+}
+#latest .block .download-btn li a {
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 10px 28px 13px;
+  font-size: 18px;
+}
+#latest .block .download-btn li a i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+#latest .block .download-btn li .btn-apple {
+  background: #8883bc;
+  border: 1px solid transparent;
+  -webkit-transition: .2s all;
+  -o-transition: .2s all;
+  transition: .2s all;
+
+}
+#latest .block .download-btn li .btn-apple:hover {
+  color: #8883bc;
+  background: #fff;
+  border: 1px solid #8883bc;
+}
+#latest .block .download-btn li .btn-andriod {
+  background: #6fbf39;
+  border: 1px solid transparent;
+  -webkit-transition: .2s all;
+  -o-transition: .2s all;
+  transition: .2s all;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 10px 28px 13px;
+  font-size: 18px;
+}
+#latest .block .download-btn li .btn-andriod:hover {
+  color: #6fbf39;
+  background: #fff;
+  border: 1px solid #6fbf39;
+}
+#latest .block .download-btn li .btn-windows {
+  background: #00afec;
+  border: 1px solid transparent;
+  -webkit-transition: .2s all;
+  -o-transition: .2s all;
+  transition: .2s all;
+}
+
+.movies-main {
+  margin-top: 75px;
 }
