@@ -9,10 +9,15 @@ var Genre = require('../models/genres');
 //api function export
 module.exports = function(app) {
 
-//Home Page
+//home Page
 app.get('/', function(req, res) {
      res.render('index');
  });
+
+ //categories Page
+ app.get('/categories', function(req, res) {
+      res.render('categories');
+  });
 
 //horror movies
 app.get('/horror', function(req, res, next) {
