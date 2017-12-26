@@ -9,13 +9,20 @@ var Genre = require('../models/genres');
 //api function export
 module.exports = function(app) {
 
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
+
 //home Page
 app.get('/', function(req, res) {
      res.render('index');
  });
 
  //categories Page
- app.get('/categories', function(req, res) {
+ app.get('/categories', isLoggedIn, function(req, res) {
       res.render('categories');
   });
 

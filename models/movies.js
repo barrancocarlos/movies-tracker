@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Genre = require('./genres');
 
-//new schema
+// define the schema for our movie model
 var MovieSchema = mongoose.Schema({
     title: {type: String, required: true},
     genre: {
