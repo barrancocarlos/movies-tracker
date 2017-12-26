@@ -36,7 +36,9 @@ app.set('view engine', 'handlebars'); // template engine
 app.use(express.static(__dirname + '/public'));
 // required for passport
 app.use(session({
-  secret: 'ilovenodejs'
+  secret: 'ilovenodejs',
+  resave: true,
+  saveUninitialized: true,
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

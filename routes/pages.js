@@ -7,7 +7,7 @@ var Movie = require('../models/movies');
 var Genre = require('../models/genres');
 
 //api function export
-module.exports = function(app) {
+module.exports = function(app, passport) {
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
@@ -35,26 +35,6 @@ app.get('/horror', function(req, res, next) {
        Genre.populate(data, {path: "genre"},function(err, data) {
         console.log(data);
         res.render('horror', { movie : data, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//comedy movies
-app.get('/comedy', function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('comedy', { movie : data, helpers:{
           if_eq:function(a, b, opts) {
             if (a == b) {
                 return opts.fn(this);
@@ -189,14 +169,14 @@ app.get('/priority', function(req, res, next) {
 
 
  // Latest movies
-app.get('/latest', function(req, res, next) {
+app.get('/latest', isLoggedIn, function(req, res, next) {
   var movies = Movie.find().sort("-createdAt").exec(function(err, data) {
        if(err) {
            return next(err);
        }
        Genre.populate(data, {path: "genre"},function(err, data) {
         console.log(data);
-        res.render('latest-movies', { movie : data});
+        res.render('latest-movies', { movie : data, user : req.user});
       });
    });
 });

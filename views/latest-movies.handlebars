@@ -4,8 +4,8 @@ $(function () {
 })
 </script>
 
+{{> header}}
 
-<div class="movies-background"></div>
 
 <section id="latest">
 
@@ -19,6 +19,7 @@ $(function () {
         <li><a href="/add" class="btn btn-default btn-windows"><i class="fa fa-plus-circle"></i>Add New</a></li>
         <li><a href="/priority" class="btn btn-default btn-apple"><i class="fa fa-bolt"></i>High Priority</a></li>
       </ul>
+
       <div class="row wow fadeInUp movies-main">
         {{#if movie}}
           {{#each movie}}

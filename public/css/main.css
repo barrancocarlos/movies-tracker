@@ -521,6 +521,26 @@ footer p {
   height:50px;
 }
 
+.movies-background h1 {
+  font-size: 25px;
+  color: white;
+  margin-top: 9px;
+}
+
+.movies-background p {
+  font-size: 16px;
+  color: white;
+  margin-top: 12px;
+  float: right;
+}
+
+.movies-background a {
+  font-size: 16px;
+  color: white;
+  margin-top: 12px;
+
+}
+
 .modal-backdrop {
     position: relative;
 }
