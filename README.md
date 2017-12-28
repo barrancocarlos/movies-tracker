@@ -6,7 +6,7 @@ An app that allows you to keep track of the movies you want to see.
 
 Movies Tracker keeps your movie list organize y genre and priority level.
 
-![Alt Text](https://github.com/barrancocarlos/multer-express.js/blob/master/public/images/multer-capture.jpg)
+![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/home.jpg)
 
 ### Some Features
 
@@ -16,6 +16,9 @@ Movies tracker uses the following:
 * It uses Multer to upload the movies images.
 * It has a Rest Api with Express.js for CRUD operations.
 * It uses Passport.js for authentication.
+* It uses handlebars helpers for conditional logic.
+
+![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/capture.jpg)
 
 ## Getting Started
 
