@@ -8,6 +8,8 @@ Movies Tracker keeps your movie list organize y genre and priority level.
 
 ![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/home.jpg)
 
+Home page screen capture
+
 ### Some Features
 
 Movies tracker uses the following:
@@ -19,6 +21,8 @@ Movies tracker uses the following:
 * It uses handlebars helpers for conditional logic.
 
 ![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/capture.jpg)
+
+Latest movies screen capture
 
 ## Getting Started
 
