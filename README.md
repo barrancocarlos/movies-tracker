@@ -45,7 +45,7 @@ Make sure you have installed all of the following prerequisites on your developm
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/barrancocarlos/multer-express.js.git
+$ git clone https://github.com/barrancocarlos/movies-tracker.git
 
 # Go into the repository
 $ cd movies-tracker
