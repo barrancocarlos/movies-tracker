@@ -7,7 +7,7 @@ An app that allows you to keep track of the movies you want to see.
 Movies Tracker keeps your movie list organize by genre and priority level.
 
 
-Home page screen capture
+_Home page screen capture_
 
 ![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/home.jpg)
 
@@ -23,7 +23,7 @@ Movies tracker uses the following:
 * It uses Passport.js for authentication.
 * It uses handlebars helpers for conditional logic.
 
-Latest movies screen capture
+_Latest movies screen capture_
 
 ![Alt Text](https://github.com/barrancocarlos/movies-tracker/blob/master/public/images/capture.jpg)
 
