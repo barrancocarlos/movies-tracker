@@ -48,6 +48,147 @@ app.get('/latest', isLoggedIn, function(req, res, next) {
    });
 });
 
+//high priority
+app.get('/priority', isLoggedIn, function(req, res, next) {
+  var movies = Movie.find().exec(function(err, data) {
+       if(err) {
+           return next(err);
+       }
+       Genre.populate(data, {path: "genre"},function(err, data) {
+        console.log(data);
+        res.render('priority', { movie : data, user : req.user, helpers:{
+          if_eq:function(a, b, opts) {
+            if (a == b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        }}});
+      });
+   });
+});
+
+//horror movies
+app.get('/horror', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('horror', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+//comedy movies
+app.get('/comedy', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('comedy', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+//sci-fi movies
+app.get('/sci-fi', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('sci-fi', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+//crime movies
+app.get('/crime', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('crime', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+//drama movies
+app.get('/drama', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('drama', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+//thriller movies
+app.get('/thriller', isLoggedIn, function(req, res, next) {
+ var movies = Movie.find().exec(function(err, data) {
+      if(err) {
+          return next(err);
+      }
+      Genre.populate(data, {path: "genre"},function(err, data) {
+       console.log(data);
+       res.render('thriller', { movie : data, user : req.user, helpers:{
+         if_eq:function(a, b, opts) {
+           if (a == b) {
+               return opts.fn(this);
+           } else {
+               return opts.inverse(this);
+           }
+       }}});
+     });
+  });
+});
+
+
 //Add movie
 app.get('/add', isLoggedIn, function(req, res) {
   var genres = Genre.find().exec(function(err, data) {
@@ -86,146 +227,5 @@ app.get('/add', isLoggedIn, function(req, res) {
        });
     });
  });
-
- //high priority
- app.get('/priority', isLoggedIn, function(req, res, next) {
-   var movies = Movie.find().exec(function(err, data) {
-        if(err) {
-            return next(err);
-        }
-        Genre.populate(data, {path: "genre"},function(err, data) {
-         console.log(data);
-         res.render('priority', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
-       });
-    });
- });
-
-//horror movies
-app.get('/horror', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('horror', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//comedy movies
-app.get('/comedy', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('comedy', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//sci-fi movies
-app.get('/sci-fi', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('sci-fi', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//crime movies
-app.get('/crime', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('crime', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//drama movies
-app.get('/drama', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('drama', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
-//thriller movies
-app.get('/thriller', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"},function(err, data) {
-        console.log(data);
-        res.render('thriller', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
-
 
 };//end function

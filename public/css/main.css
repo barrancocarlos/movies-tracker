@@ -697,3 +697,41 @@ footer p {
   background-color: rgba(255, 255, 255, 0.7);;
   margin-top: 120px;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width: 990px) {
+  .cat-module .left i {
+      color: white;
+      font-size: 43px;
+      margin-top: 56px;
+  }
+
+  .movies-background {
+    height: 100px;
+}
+
+}/*990*/
+
+@media (max-width: 768px) {
+  .cat-module .left i {
+    color: white;
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .cat-module .left1 {
+    border-radius: inherit;
+}
+.cat-module .left2 {
+  border-radius: inherit;
+}
+.cat-module .left3 {
+  border-radius: inherit;
+}
+.movies-background {    
+    height: 130px;
+}
+
+
+}/*768*/
