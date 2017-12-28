@@ -475,6 +475,7 @@ footer p {
 .movie-module {
   border-radius: 15px;
   margin-bottom: 45px;
+  height: 440px;
   -webkit-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
   -moz-box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
   box-shadow: 9px 10px 29px -12px rgba(112,106,112,1);
@@ -729,7 +730,7 @@ footer p {
 .cat-module .left3 {
   border-radius: inherit;
 }
-.movies-background {    
+.movies-background {
     height: 130px;
 }
 
