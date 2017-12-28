@@ -1,42 +1,42 @@
-<section id="banner">
+{{> header}}
 
-<div class="container">
+<section id="latest">
+  <div class="container">
+    <div class="block">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h1>Add a New Movie</h1>
 
-         <div class="block">
-           <div class="row justify-content-center">
-            <div class="col-md-6">
+          <form class="form-group movie-form" method="post" enctype="multipart/form-data" action="/api/movies">
+            <input type="text" class="form-control" placeholder="Title" name="title" required>
 
-               <h1 class="add-buttons">Add a New Movie</span></h1>
-
-                 <form class="form-group" method="post" enctype="multipart/form-data" action="/api/movies">
-                    <input type="text" class="form-control" placeholder="Title" name="title" required="true">
-
-                    <select type="text" class="form-control" style="margin-top:5%;" name="genre">
+            <select type="text" class="form-control" style="margin-top:5%;" name="genre">
                       {{#each genre}}
                         <option value={{_id}}>{{name}}</option>
                       {{/each}}
 
-                    </select>
+            </select>
 
-                    <input type="text" class="form-control" style="margin-top:5%;" name="year" placeholder="Year">
+            <input type="text" class="form-control" style="margin-top:5%;" name="year" placeholder="Year">
 
-                    <select type="text" class="form-control" style="margin-top:5%;" name="priority" placeholder="Priority">
+            <select type="text" class="form-control" style="margin-top:5%;" name="priority" placeholder="Priority">
                         <option value="Low">Low</option>
                         <option value="High">High</option>
                     </select>
-                    <label for="photo">Photo</label>
-                    <input type="file" class="form-control-file" name="photo">
-                    <ul class="download-btn add-buttons" style="margin-top:5%;">
-                      <li>
-                        <a href="/" class="btn btn-default btn-windows"> <i class="fa fa-arrow-left"></i>Back</a>
-                      </li>
-                      <li>
-                        <button type="submit" class="btn btn-default btn-andriod"><i class="fa fa-floppy-o"></i> Submit</button>
-                      </li>
-                    </ul>
-                </form>
+            <label for="photo" class="photo-label">Photo</label>
+            <input type="file" class="form-control-file" name="photo" required>
+            <ul class="download-btn add-buttons" style="margin-top:5%;">
+              <li>
+                <a href="/" class="btn btn-default btn-windows"> <i class="fa fa-arrow-left"></i>Back</a>
+              </li>
+              <li>
+                <button type="submit" class="btn btn-default btn-andriod"><i class="fa fa-floppy-o"></i> Submit</button>
+              </li>
+            </ul>
+          </form>
         </div>
-        </div>
+      </div>
     </div>
-</div>
-<section/>
+  </div>
+  </section>
+  {{> footer}}

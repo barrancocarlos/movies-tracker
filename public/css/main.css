@@ -545,6 +545,10 @@ footer p {
     position: relative;
 }
 
+#latest {
+  min-height: 600px;
+}
+
 #latest h1 {
   color:#6199b0;
   text-align: center;
@@ -622,6 +626,11 @@ footer p {
   -o-transition: .2s all;
   transition: .2s all;
 }
+#latest .block .download-btn li .btn-windows:hover {
+  color: #00afec;
+  background: #fff;
+  border: 1px solid #00afec;
+}
 
 .movies-main {
   margin-top: 75px;
@@ -655,4 +664,36 @@ footer p {
   margin-top: 25px;
   font-size: 24px;
   margin-bottom: 35px;
+}
+
+.footer-main h1 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 9px;
+  font-weight: 300;
+}
+
+.footer-main {
+  background-color: #5c9aa2;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.photo-label {
+  margin-top: 24px;
+  margin-left: 13px;
+}
+
+.movie-form {
+  margin-top: 40px;
+}
+
+.login-back {
+  background-image: url("../images/login-back.jpg");
+  min-height: 800px;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.7);;
+  margin-top: 120px;
 }

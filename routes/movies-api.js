@@ -58,6 +58,7 @@ app.get('/api/movies', function(req, res, next) {
            genre: req.body.genre,
            priority: req.body.priority,
            photo: req.file.filename,
+           author: req.user.id,
         });
         movie.save(function(err, data) {
             if(err) {

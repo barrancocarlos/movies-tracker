@@ -9,6 +9,8 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 var exphbs = require('express-handlebars'); //handlebars
 var passport = require('passport'); //authentication
 var flash = require('connect-flash'); //flash messages
+var favicon = require('serve-favicon'); // favicon
+var path = require('path');
 
 
 
@@ -43,6 +45,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(favicon(path.join(__dirname,'public','images','favicon.png')));
 
 // routes =========================
 
