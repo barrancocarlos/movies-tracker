@@ -22,29 +22,36 @@ require('./config/passport')(passport);
 
 // configuration =================
 
-app.use(morgan('dev')); // log every request to the console
+// log every request to the console
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   'extended': 'true'
-})); // parse application/x-www-form-urlencoded
-app.use(bodyParser.json()); // parse application/json
+}));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.json());
+// parse application/json
 app.use(bodyParser.json({
   type: 'application/vnd.api+json'
-})); // parse application/vnd.api+json as json
+}));
+// parse application/vnd.api+json as json
 app.use(methodOverride('_method')); // put and delete
+// define template engine
 app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }));
-app.set('view engine', 'handlebars'); // template engine
+app.set('view engine', 'handlebars');
+// static files
 app.use(express.static(__dirname + '/public'));
 // required for passport
 app.use(session({
-  secret: 'ilovenodejs',
+  secret: 'ilovenodejs', // session secret
   resave: true,
   saveUninitialized: true,
-})); // session secret
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+// favicon
 app.use(favicon(path.join(__dirname,'public','images','favicon.png')));
 
 // routes =========================
