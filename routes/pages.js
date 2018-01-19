@@ -44,14 +44,7 @@ app.get('/priority', isLoggedIn, function(req, res, next) {
        }
        Genre.populate(data, {path: "genre"},function(err, data) {
         console.log(data);
-        res.render('priority', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
+        res.render('priority', { movie : data, user : req.user});
       });
    });
 });
@@ -65,14 +58,7 @@ app.get('/horror', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('horror', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('horror', { movie : data, user : req.user});
        });
     });
 });
@@ -85,14 +71,7 @@ app.get('/comedy', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('comedy', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('comedy', { movie : data, user : req.user});
        });
     });
 });
@@ -105,14 +84,7 @@ app.get('/sci-fi', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('sci-fi', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('sci-fi', { movie : data, user : req.user});
        });
     });
 });
@@ -125,14 +97,7 @@ app.get('/crime', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('crime', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('crime', { movie : data, user : req.user});
        });
     });
 });
@@ -145,14 +110,7 @@ app.get('/drama', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('drama', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('drama', { movie : data, user : req.user});
        });
     });
 });
@@ -165,14 +123,7 @@ app.get('/thriller', isLoggedIn, function(req, res, next) {
         }
         Genre.populate(data, {path: "genre"},function(err, data) {
          console.log(data);
-         res.render('thriller', { movie : data, user : req.user, helpers:{
-           if_eq:function(a, b, opts) {
-             if (a == b) {
-                 return opts.fn(this);
-             } else {
-                 return opts.inverse(this);
-             }
-         }}});
+         res.render('thriller', { movie : data, user : req.user});
        });
     });
 });
@@ -205,14 +156,7 @@ app.get('/add', isLoggedIn, function(req, res) {
              }
              console.log(datagenre);
              //handlebars helper for conditional logic
-             res.render('edit', { movie:data, listofgenre:datagenre, user : req.user, helpers:{
-               if_eq:function(a, b, opts) {
-                 if (a == b) {
-                     return opts.fn(this);
-                 } else {
-                     return opts.inverse(this);
-                 }
-             }}});
+             res.render('edit', { movie:data, listofgenre:datagenre, user : req.user});
          });
     });
  });

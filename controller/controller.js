@@ -11,14 +11,7 @@ var movies = Movie.find().sort("-createdAt").exec(function(err, data) {
      }
      Genre.populate(data, {path: "genre"}, function(err, data) {
      console.log(data);
-     res.render('latest-movies', { movie : data, user : req.user, helpers:{
-        if_eq:function(a, b, opts) {
-          if (a == b) {
-              return opts.fn(this);
-          } else {
-              return opts.inverse(this);
-          }
-      }}});
+     res.render('latest-movies', { movie : data, user : req.user});
     });
  });
 };

@@ -37,10 +37,21 @@ app.use(bodyParser.json({
 // parse application/vnd.api+json as json
 app.use(methodOverride('_method')); // put and delete
 // define template engine
+
 app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
-}));
+  defaultLayout: 'main',
+  helpers: {
+    if_eq: function(a, b, opts) {
+      if (a == b) {
+        return opts.fn(this);
+      } else {
+        return opts.inverse(this);
+      }
+    }
+  }
+  }));
 app.set('view engine', 'handlebars');
+
 // static files
 app.use(express.static(__dirname + '/public'));
 // required for passport
