@@ -7,6 +7,9 @@ var Movie = require('../models/movies');
 var Genre = require('../models/genres');
 var User = require('../models/users');
 
+//import controller
+var controller = require('../controller/controller');
+
 //api function export
 module.exports = function(app, passport) {
 
@@ -22,6 +25,7 @@ app.get('/', isLoggedIn,function(req, res) {
      res.render('index');
  });
 
+
  //categories Page
   app.get('/categories', isLoggedIn, function(req, res) {
     res.render('categories', { user : req.user });
@@ -29,24 +33,8 @@ app.get('/', isLoggedIn,function(req, res) {
 
 
  // Latest movies
-app.get('/latest', isLoggedIn, function(req, res, next) {
-  var movies = Movie.find().sort("-createdAt").exec(function(err, data) {
-       if(err) {
-           return next(err);
-       }
-       Genre.populate(data, {path: "genre"}, function(err, data) {
-       console.log(data);
-       res.render('latest-movies', { movie : data, user : req.user, helpers:{
-          if_eq:function(a, b, opts) {
-            if (a == b) {
-                return opts.fn(this);
-            } else {
-                return opts.inverse(this);
-            }
-        }}});
-      });
-   });
-});
+app.get('/latest', isLoggedIn, controller.getMovies);
+
 
 //high priority
 app.get('/priority', isLoggedIn, function(req, res, next) {
@@ -67,6 +55,7 @@ app.get('/priority', isLoggedIn, function(req, res, next) {
       });
    });
 });
+
 
 //horror movies
 app.get('/horror', isLoggedIn, function(req, res, next) {
@@ -227,5 +216,6 @@ app.get('/add', isLoggedIn, function(req, res) {
          });
     });
  });
+
 
 };//end function
