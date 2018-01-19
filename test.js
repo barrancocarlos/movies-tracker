@@ -16,7 +16,7 @@ chai.use(chaiHttp);
 // rest api test
 describe('/api endpoits', function() {
   //get all
-  it('should get all movies on /api', function(done) {
+  it('Getet all movies on /api', function(done) {
     chai.request(config.host + ':' + config.port)
       .get('/api/movies')
       .end(function(err, res) {
@@ -26,7 +26,7 @@ describe('/api endpoits', function() {
       });
   });
   //get by id
-  it('/Get/:id movie', function() {
+  it('Get single movie', function() {
     chai.request(config.host + ':' + config.port)
       .get('/api/movies/5a455a8dc3b83e0260528700')
       .end(function(err, res) {
@@ -36,7 +36,7 @@ describe('/api endpoits', function() {
       });
   });
   // create new
-  it('create new movie on /api', function(done) {
+  it('Create new movie', function(done) {
     var movie = {
       title: "Test",
       genre: "Horror",
@@ -54,6 +54,15 @@ describe('/api endpoits', function() {
         done();
       });
   });
+  //delete
+    it('Delete movie', function() {
+      chai.request(config.host + ':' + config.port)
+        .del('/api/5a429285a9de8719805962c2')
+        .end(function(err, res) {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
 
 
 }); //end api endpoints
